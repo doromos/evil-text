@@ -53,12 +53,14 @@ char *getPrompt(char *promt, void (*callback)(char *, int)) {
         return buf;
       }
     } else if (c == DEL_KEY || c == CTRL_KEY('h') || c == BACKSPACE) {
-      if (bufsize != 0) {
+      if (bufsize > 0) {
         buf[--bufsize] = '\0';
+      }else if(bufsize ==0){
+	      setStatusMessage("");
+	      free(buf);
+	      return NULL;
       }
     } else if (c == ESC_KEY) {
-      if (callback)
-        callback(buf, c);
       setStatusMessage("");
       free(buf);
       return NULL;
