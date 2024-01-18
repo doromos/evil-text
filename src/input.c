@@ -149,9 +149,6 @@ void procKey(void) {
   case CTRL_KEY('s'):
     save();
     break;
-  case CTRL_KEY('l'):
-  case '\x1b':
-    break;
   case CTRL_KEY('f'):
     search();
     break;
@@ -170,8 +167,15 @@ void procKey(void) {
   case CTRL_KEY('r'):
     replace();
     break;
+  case CTRL_KEY('i'):
+	conf.mod =0;
+	break;
+  case ESC_KEY:
+	conf.mod =1;
+	break;
   default:
-    insertAChar(c);
+    if(conf.mod == 0)
+      insertAChar(c);
     break;
   }
 }

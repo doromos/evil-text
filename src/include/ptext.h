@@ -7,6 +7,7 @@
 #include <time.h>
 
 struct config {
+  int mod;
   int cx, cy;
   int rx;
   row *rows;

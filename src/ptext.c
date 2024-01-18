@@ -34,6 +34,7 @@ void die(const char *s) {
 }
 
 void init(void) {
+  conf.mod = 1; // no coding
   conf.numrows = 0;
   conf.rows = NULL;
   conf.cx = 0;

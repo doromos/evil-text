@@ -6,7 +6,7 @@ void sayHello(void) { setStatusMessage("Hello from config"); }
 
 // To costumize the key bindings, add a new entry to the customKeys array
 // like this:
-struct keyPair customKeys[] = {{CTRL_KEY('i'), &sayHello}};
+struct keyPair customKeys[] = {{CTRL_KEY('p'), &sayHello}};
 // The first argument is the key combination, the second is the function that
 // will get executed
 //
